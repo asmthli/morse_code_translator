@@ -28,9 +28,11 @@ class Dictionary:
         return cls(char_to_morse, morse_to_char)
 
     def encode_char(self, ch: str):
+        ch = ch.lower()
         return self.char_to_morse[ch]
 
     def decode_morse(self, morse: str):
+        morse = morse.lower()
         return self.morse_to_char[morse]
 
 
@@ -38,6 +40,7 @@ if __name__ == "__main__":
     dictionary = Dictionary.from_char_to_morse_json("char_to_morse.json")
     pprint.pp(dictionary.morse_to_char)
 
-    print(f"Encoding of 'a' is {dictionary.encode_char('a')}.")
+    print(f"Encoding of a is {dictionary.encode_char('a')}.")
+    print(f"Encoding of A is {dictionary.encode_char('A')}.")
     print(f"This should read 'b': {dictionary.decode_morse(dictionary.encode_char('b'))}.")
 
