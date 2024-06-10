@@ -43,4 +43,3 @@ if __name__ == "__main__":
     print(f"Encoding of a is {dictionary.encode_char('a')}.")
     print(f"Encoding of A is {dictionary.encode_char('A')}.")
     print(f"This should read 'b': {dictionary.decode_morse(dictionary.encode_char('b'))}.")
-
